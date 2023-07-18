@@ -165,6 +165,18 @@ Before we go to far, I will mention that there are diffent types of tensors. The
 With the execption of ```Variable``` all these tensors are immuttable, meaning their value may not change during execution.
 
 For now, it is enough to understand that we use the Variable tensor when we want to potentially change the value of our tensor.
+"""
+# Evaluating Tensors 
+"""
+There will be some times throughout this guide that we need to evaluate a tensor. 
+In other words, get its value. Since tensors represent a partially complete computation we will sometimes need to run what's called a session to evaluate the tensor.
+There are many different ways to achieve this but I will note the simplest way below."""
+
+with tf.Session () as sess: # creates a session using the default graph 
+    tensor.eval () # tensor will of course be the name of your tensor
+
+"""In the code above we evaluated the tensor variable that was stored in the default graph. 
+The default graph holds all operations not specififed to any other graph. It is possible to create our own seperate graphs but for now we will stick with the default.
 
 #Sources
 Most of the information is taken direclty from the TensorFlow website which can be found below.
